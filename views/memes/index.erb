@@ -1,0 +1,16 @@
+<h2><%= @page_header %></h2>
+
+<% @posts.each do |post| %>
+	<h3><%= meme.title %></h3>
+	<p><%= meme.description %></p>
+	<p><strong><%= meme.url %></strong></p>
+	<p><%= meme.genre %></p>
+
+	<a href="/memes/<%= meme.id %>">Click here for the full description</a>
+	<a href="/memes/<%= meme.id%>/edit">Click here to edit video info</a>
+
+	<form action="/memes/<%= meme.id %>" method="POST">
+		<input type= "hidden" name="method" value="Delete">t
+		<input type="submi" value="Delete">
+	</form>
+<% end %>
