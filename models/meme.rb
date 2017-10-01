@@ -41,7 +41,7 @@ class Meme
 
 		meme = self.hydrate memes[0]
 
-		memes
+		meme
 	end
 
 	#create & update
@@ -59,7 +59,7 @@ class Meme
 	#delete
 	def self.destroy id
 		conn = Meme.open_connection
-		sql = "DELETE FROM post WHERE id = #{id};"
+		sql = "DELETE FROM meme WHERE id = #{id};"
 
 		conn.exec(sql)
 	end

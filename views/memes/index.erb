@@ -3,14 +3,14 @@
 <% @memes.each do |meme| %>
 	<h3><%= meme.title %></h3>
 	<p><%= meme.description %></p>
-	<p><strong><a href="/memes/<%= meme.url %>"><%= meme.url %></a></strong></p>
+	<p><strong><a href="<%= meme.url %>"><%= meme.url %></a></strong></p>
 	<p><%= meme.genre %></p>
 
 	<a href="/memes/<%= meme.id %>">Click here for the full description</a>
 	<a href="/memes/<%= meme.id%>/edit">Click here to edit video info</a>
 
 	<form action="/memes/<%= meme.id %>" method="POST">
-		<input type= "hidden" name="method" value="Delete">
+		<input type= "hidden" name="_method" value="Delete">
 		<input type="submit" value="Delete">
 	</form>
 <% end %>

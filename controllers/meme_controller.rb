@@ -22,7 +22,7 @@ class MemeController < Sinatra::Base
 
 	#show
 	get '/memes/:id' do 
-		@memes = Meme.find(params[:id])
+		@memes = Meme.find(params[:id].to_i)
 		erb :"memes/show"
 	end
 
