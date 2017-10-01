@@ -5,14 +5,11 @@
 		<h2><a href="/memes/<%= meme.id %>"><%= meme.title %></a></h2>
 		<p><%= meme.description %></p>
 		<p><strong><a href="<%= meme.url %>">Full Screen Link</a></strong></p>
+	
 		<p>Genre: <%= meme.genre %></p>
 
-		<a href="/memes/<%= meme.id %>">Watch Video</a>
-		<br>
-		<br>
-		<a href="/memes/<%= meme.id%>/edit">Edit Video Info</a>
-		<br>
-		<br>
+		<p><a href="/memes/<%= meme.id %>">Watch Video</a></p>
+		<p><a href="/memes/<%= meme.id%>/edit">Edit Video Info</a></p>
 
 		<form action="/memes/<%= meme.id %>" method="POST">
 			<input type= "hidden" name="_method" value="Delete">
