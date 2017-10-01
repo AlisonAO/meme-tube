@@ -5,7 +5,8 @@ class MemeController < Sinatra::Base
 	end
 
 	set :root, File.join(File.dirname(__FILE__), "..")
-	set :views, Proc.new { FILE.join(root, 'views') }
+
+	set :views, Proc.new { File.join(root, 'views') }
 
 	#index
 	get '/memes' do 
@@ -23,6 +24,7 @@ class MemeController < Sinatra::Base
 	get '/memes/:id' do 
 		@memes = Meme.find(params[:id])
 		erb :"memes/show"
+	end
 
 	#new	
 	post '/memes' do 

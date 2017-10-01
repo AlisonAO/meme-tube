@@ -13,11 +13,11 @@ class Meme
 
 		results = conn.exec(sql)
 
-		meme = results.map do |record|
+		memes = results.map do |record|
 			self.hydrate(record)
 		end
 
-		meme
+		memes
 	end
 
 	#new
@@ -36,19 +36,19 @@ class Meme
 	#show
 	def self.find id 
 		conn = self.open_connection
-		sql = 'SELECT * FROM meme WHERE id = #{id}'
-		meme = conn.exec(sql)
+		sql = "SELECT * FROM meme WHERE id = #{id};"
+		memes = conn.exec(sql)
 
-		meme = self.hydrate meme[0]
+		meme = self.hydrate memes[0]
 
-		meme
+		memes
 	end
 
 	#create & update
 	def save
 		conn = Meme.open_connection
 		if !self.id
-			sql = "INSERT INTO meme (genre, url, description, title) VALUES ('#{self.genre}', '#{self.url}', '#{self.description}', '#{self.title}',)"
+			sql = "INSERT INTO meme (genre, url, description, title) VALUES ('#{self.genre}','#{self.url}','#{self.description}','#{self.title}')"
 		else
 			sql = "UPDATE meme SET title = '#{self.title}', description = '#{self.description}', url = '#{self.url}', genre = '#{self.genre}' WHERE id = #{self.id}"
 		end
@@ -59,7 +59,7 @@ class Meme
 	#delete
 	def self.destroy id
 		conn = Meme.open_connection
-		sql = "DELETE FROM post WHERE id = #{id}"
+		sql = "DELETE FROM post WHERE id = #{id};"
 
 		conn.exec(sql)
 	end
