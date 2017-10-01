@@ -11,11 +11,14 @@
 		<br>
 		<br>
 		<a href="/memes/<%= meme.id%>/edit">Edit Video Info</a>
+		<br>
+		<br>
 
 		<form action="/memes/<%= meme.id %>" method="POST">
 			<input type= "hidden" name="_method" value="Delete">
 			<input type="submit" value="Delete">
 		</form>
+		<br>
 	</div>
 	<br>
 <% end %>

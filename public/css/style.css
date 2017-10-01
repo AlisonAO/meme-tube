@@ -1,8 +1,16 @@
-body {
-	background-image: url("../../images/points.jpg");
-	background-repeat: no-repeat;
+html{
+	background: url("../../images/points.jpg") no-repeat center center fixed;
+/*	background-repeat: no-repeat;
 	background-size: 100% cover;
-	background-position: center;
+	background-position: center;*/
+
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
 	font-family: 'Comfortaa', cursive;
 	margin: 0 auto;
 	text-align: center;
@@ -17,6 +25,8 @@ h1 {
 	height: 80px;
 	margin-top: -21px;
 	border-bottom-style: groove;
+	border-color: rgb(35,99,195);
+	border-width: 8px;
 }
 
 h2 a { 
