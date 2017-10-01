@@ -1,16 +1,21 @@
 <h2><%= @page_header %></h2>
 
 <% @memes.each do |meme| %>
-	<h3><%= meme.title %></h3>
-	<p><%= meme.description %></p>
-	<p><strong><a href="<%= meme.url %>"><%= meme.url %></a></strong></p>
-	<p><%= meme.genre %></p>
+	<div id="vids">
+		<h2><a href="/memes/<%= meme.id %>"><%= meme.title %></a></h2>
+		<p><%= meme.description %></p>
+		<p><strong><a href="<%= meme.url %>"><%= meme.url %></a></strong></p>
+		<p>Genre: <%= meme.genre %></p>
 
-	<a href="/memes/<%= meme.id %>">Click here for the full description</a>
-	<a href="/memes/<%= meme.id%>/edit">Click here to edit video info</a>
+		<a href="/memes/<%= meme.id %>">Watch Video</a>
+		<br>
+		<br>
+		<a href="/memes/<%= meme.id%>/edit">Edit Video Info</a>
 
-	<form action="/memes/<%= meme.id %>" method="POST">
-		<input type= "hidden" name="_method" value="Delete">
-		<input type="submit" value="Delete">
-	</form>
+		<form action="/memes/<%= meme.id %>" method="POST">
+			<input type= "hidden" name="_method" value="Delete">
+			<input type="submit" value="Delete">
+		</form>
+	</div>
+	<br>
 <% end %>

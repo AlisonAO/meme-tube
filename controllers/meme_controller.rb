@@ -10,7 +10,7 @@ class MemeController < Sinatra::Base
 
 	#index
 	get '/memes' do 
-		@page_header = "Index Page"
+		# @page_header = "Index Page"
 		@memes = Meme.all
 		erb :"memes/index"
 	end

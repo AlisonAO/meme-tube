@@ -1,3 +1,37 @@
 body {
+	background-image: url("../../images/points.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% cover;
+	background-position: center;
 	font-family: 'Comfortaa', cursive;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
 } 
+h1 {
+	padding-top: 20px;
+}
+
+#header {
+	background-color: rgba(0,0,0,0.7);
+	height: 80px;
+	margin-top: -21px;
+	border-bottom-style: groove;
+}
+
+h2 a { 
+	color: inherit; 
+	text-decoration: none;
+} 
+
+a { 
+	color: inherit; 
+} 
+
+#vids {
+	background-color: rgba(0,0,0,0.4);
+    width: 800px;
+    margin: 0 auto;
+    border-style: groove;
+        border-radius: 15px;
+}
